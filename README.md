@@ -1,6 +1,5 @@
 # 🧮 Unit Converter
 
-## 📖 Overview
  A comprehensive unit conversion application built with React, TypeScript, Vite, and TailwindCSS. This application provides various conversion tools and calculators with a beautiful, responsive UI and dark mode support.
 
 ## 🛠️ Tech Stack
