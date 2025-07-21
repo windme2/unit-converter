@@ -16,21 +16,6 @@
 - Notifications: React Hot Toast
 - Icons: React Icons
 
-## 📁 Project Structure
-```
-unit-converter/
-├── src/
-│   ├── components/     # Reusable UI components (.tsx)
-│   ├── hooks/         # Custom React hooks (.ts)
-│   ├── pages/         # Page components (.tsx)
-│   ├── utils/         # Helper functions & constants (.ts)
-│   ├── App.tsx        # Main application component
-│   └── main.tsx       # Application entry point
-├── public/            # Static assets
-│   └── calculator-icon.svg  # Application favicon
-└── ...config files
-```
-
 ## ✨ Features
 
 ### Unit Converters
