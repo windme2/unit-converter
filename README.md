@@ -1,4 +1,4 @@
-# 🧮 Unit Converter
+# Unit Converter 🧮
 
  A comprehensive unit conversion application built with React, TypeScript, Vite, and TailwindCSS. This application provides various conversion tools and calculators with a beautiful, responsive UI and dark mode support.
 
@@ -13,7 +13,6 @@
 - HTTP Client: Axios
 - Routing: React Router
 - Notifications: React Hot Toast
-- Icons: React Icons
 
 ## ✨ Features
 
