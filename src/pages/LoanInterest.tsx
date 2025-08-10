@@ -162,8 +162,8 @@ const LoanInterestCalculator = ({ isDark, toggleDarkMode }) => {
                 } border focus:ring-2 focus:ring-primary pr-10`}
                 aria-label="Time Unit"
               >
-                <option value="years">Years</option>
                 <option value="months">Months</option>
+                <option value="years">Years</option>
               </select>
             </div>
           </div>
@@ -205,7 +205,7 @@ const LoanInterestCalculator = ({ isDark, toggleDarkMode }) => {
                 </span>{" "}
                 <span className={isDark ? "text-teal-200" : "text-teal-700"}>
                   {formatNumber(result.monthlyPayment)} (
-                  {formatNumber(result.timeInMonths)} months)
+                  {Math.round(parseFloat(result.timeInMonths))} months)
                 </span>
               </p>
             )}
@@ -216,7 +216,7 @@ const LoanInterestCalculator = ({ isDark, toggleDarkMode }) => {
                 </span>{" "}
                 <span className={isDark ? "text-teal-200" : "text-teal-700"}>
                   {formatNumber(result.yearlyPayment)} (
-                  {formatNumber(result.timeInYears)} years)
+                  {Math.round(parseFloat(result.timeInYears))} years)
                 </span>
               </p>
             )}

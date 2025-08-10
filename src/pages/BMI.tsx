@@ -160,11 +160,11 @@ const BMICalculator: React.FC<BMICalculatorProps> = ({ isDark, toggleDarkMode })
       initial="initial"
       animate="animate"
       exit="exit"
-      className="flex-1 flex flex-col gap-6 max-w-4xl mx-auto p-10"
+      className="flex-1 flex flex-col gap-4 max-w-md mx-auto px-4 py-3"
     >
       <motion.div
         variants={containerVariants}
-        className={`card-container p-6 rounded-lg flex flex-col gap-4 ${
+        className={`card-container p-4 rounded-lg flex flex-col gap-3 ${
           isDark ? "bg-gray-800" : "bg-white"
         }`}
       >
@@ -174,101 +174,87 @@ const BMICalculator: React.FC<BMICalculatorProps> = ({ isDark, toggleDarkMode })
           toggleDarkMode={toggleDarkMode}
           className="mt-4"
         />
-        <motion.div variants={childVariants} className="flex flex-col gap-3">
-          <div className="flex items-center gap-3">
-            <div className="flex-1">
-              <label
-                className={`text-sm ${
-                  isDark ? "text-gray-400" : "text-gray-600"
+        <motion.div variants={childVariants} className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
+            <label
+              className={`text-xs ${
+                isDark ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Gender
+            </label>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setGender("male")}
+                className={`flex-1 p-3 rounded-lg flex items-center justify-center gap-2 ${
+                  gender === "male"
+                    ? isDark
+                      ? "bg-blue-600 text-white"
+                      : "bg-blue-400 text-white"
+                    : isDark
+                    ? "bg-gray-700 text-gray-100"
+                    : "bg-gray-200 text-gray-900"
                 }`}
               >
-                Gender
-              </label>
-              <div className="flex gap-2 mt-1">
-                <button
-                  onClick={() => setGender("male")}
-                  className={`flex-1 p-3 rounded-lg flex items-center justify-center gap-2 ${
-                    gender === "male"
-                      ? isDark
-                        ? "bg-blue-600 text-white"
-                        : "bg-blue-400 text-white"
-                      : isDark
-                      ? "bg-gray-700 text-gray-100"
-                      : "bg-gray-200 text-gray-900"
-                  }`}
-                >
-                  <FaMars />
-                  Male
-                </button>
-                <button
-                  onClick={() => setGender("female")}
-                  className={`flex-1 p-3 rounded-lg flex items-center justify-center gap-2 ${
-                    gender === "female"
-                      ? isDark
-                        ? "bg-pink-600 text-white"
-                        : "bg-pink-400 text-white"
-                      : isDark
-                      ? "bg-gray-700 text-gray-100"
-                      : "bg-gray-200 text-gray-900"
-                  }`}
-                >
-                  <FaVenus />
-                  Female
-                </button>
-              </div>
+                <FaMars />
+                Male
+              </button>
+              <button
+                onClick={() => setGender("female")}
+                className={`flex-1 p-3 rounded-lg flex items-center justify-center gap-2 ${
+                  gender === "female"
+                    ? isDark
+                      ? "bg-pink-600 text-white"
+                      : "bg-pink-400 text-white"
+                    : isDark
+                    ? "bg-gray-700 text-gray-100"
+                    : "bg-gray-200 text-gray-900"
+                }`}
+              >
+                <FaVenus />
+                Female
+              </button>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex-1">
-              <input
-                type="number"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                className={`p-3 rounded-lg w-full text-base font-medium ${
-                  isDark
-                    ? "bg-gray-700 text-gray-100 border-gray-600"
-                    : "bg-gray-100 text-gray-800 border-gray-300"
-                } border focus:ring-2 focus:ring-primary`}
-                placeholder="Age (years)"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex-1">
-              <input
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-                className={`p-3 rounded-lg w-full text-base font-medium ${
-                  isDark
-                    ? "bg-gray-700 text-gray-100 border-gray-600"
-                    : "bg-gray-100 text-gray-800 border-gray-300"
-                } border focus:ring-2 focus:ring-primary`}
-                placeholder="Height (cm)"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex-1">
-              <input
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                className={`p-3 rounded-lg w-full text-base font-medium ${
-                  isDark
-                    ? "bg-gray-700 text-gray-100 border-gray-600"
-                    : "bg-gray-100 text-gray-800 border-gray-300"
-                } border focus:ring-2 focus:ring-primary`}
-                placeholder="Weight (kg)"
-              />
-            </div>
-          </div>
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className={`p-3 rounded-lg w-full text-sm font-medium ${
+              isDark
+                ? "bg-gray-700 text-gray-100 border-gray-600"
+                : "bg-gray-100 text-gray-800 border-gray-300"
+            } border focus:ring-2 focus:ring-primary`}
+            placeholder="Age (years)"
+          />
+          <input
+            type="number"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+            className={`p-3 rounded-lg w-full text-sm font-medium ${
+              isDark
+                ? "bg-gray-700 text-gray-100 border-gray-600"
+                : "bg-gray-100 text-gray-800 border-gray-300"
+            } border focus:ring-2 focus:ring-primary`}
+            placeholder="Height (cm)"
+          />
+          <input
+            type="number"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            className={`p-3 rounded-lg w-full text-sm font-medium ${
+              isDark
+                ? "bg-gray-700 text-gray-100 border-gray-600"
+                : "bg-gray-100 text-gray-800 border-gray-300"
+            } border focus:ring-2 focus:ring-primary`}
+            placeholder="Weight (kg)"
+          />
         </motion.div>
         <AnimatePresence mode="wait">
           <motion.div
             key={result.bmi}
             variants={childVariants}
-            className={`mt-6 p-4 rounded-lg shadow-sm ${
+            className={`mt-4 p-3 rounded-lg shadow-sm ${
               isDark ? "bg-gray-700" : "bg-gray-100"
             }`}
           >
