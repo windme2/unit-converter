@@ -46,10 +46,6 @@
 ### Clone the repository
 ```bash
 git clone https://github.com/windme2/unit-converter.git
-```
-
-### Navigate to project directory
-```bash
 cd unit-converter
 ```
 
